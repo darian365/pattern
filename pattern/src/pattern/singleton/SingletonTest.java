@@ -10,10 +10,7 @@ public class SingletonTest {
     public void testGetInstanceWithHungerMode() {
 		HungerModeSingleton o1 = HungerModeSingleton.getInstance();
 		HungerModeSingleton o2 = HungerModeSingleton.getInstance();
-		
-        if (o1 == o2) {
-            System.out.println("o1 == o2");
-        }
+
         assertEquals(o1, o2);
 	}
 
@@ -22,9 +19,14 @@ public class SingletonTest {
         LazyModeSingleton o1 = LazyModeSingleton.getInstance();
         LazyModeSingleton o2 = LazyModeSingleton.getInstance();
 
-        if (o1 == o2) {
-            System.out.println("o1 == o2");
-        }
+        assertEquals(o1, o2);
+    }
+
+    @Test
+    public void testGetStaticInnerClassModeSingleton() {
+        StaticInnerClassModeSingleton o1 = StaticInnerClassModeSingleton.getInstance();
+        StaticInnerClassModeSingleton o2 = StaticInnerClassModeSingleton.getInstance();
+
         assertEquals(o1, o2);
     }
 }
